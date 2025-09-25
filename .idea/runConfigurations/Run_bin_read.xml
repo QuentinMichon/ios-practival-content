@@ -1,7 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Run the application" type="Application" factoryName="Application">
+  <configuration default="false" name="Run bin read" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="ch.heigvd.Main" />
     <module name="java-ios" />
+    <option name="PROGRAM_PARAMETERS" value="test --implementation=BINARY read" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

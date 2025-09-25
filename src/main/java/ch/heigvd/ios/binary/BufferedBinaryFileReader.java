@@ -2,6 +2,11 @@ package ch.heigvd.ios.binary;
 
 import ch.heigvd.ios.Readable;
 
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 /**
  * A class that reads binary files. This implementation reads the file using a buffered input
  * stream. It manages the input stream and the buffered input stream properly with a
@@ -11,6 +16,16 @@ public class BufferedBinaryFileReader implements Readable {
 
   @Override
   public void read(String filename) {
-    throw new UnsupportedOperationException("Please remove this exception and implement this method.");
+    try(InputStream fis = new FileInputStream(filename)) {
+      BufferedInputStream bis = new BufferedInputStream(fis);
+
+      int b;
+      while( (b = bis.read()) != -1) {
+        System.out.print(b);
+      }
+      bis.close();
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
   }
 }
